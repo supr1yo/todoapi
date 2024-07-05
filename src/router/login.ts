@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { User } from "../models/User";
 const router = Router();
 
 interface Params {
@@ -6,12 +7,10 @@ interface Params {
   password: string;
 }
 
-router.post("/", (req: Request, res: Response) => {
+router.post("/", async (req: Request, res: Response) => {
   const { username, password }: Params = req.body;
-  res.json({
-    username,
-    password
-  });
+  const user = await User.create(req.body);
+  res.json(user);
 });
 
 
