@@ -1,8 +1,14 @@
 import express, { Request, Response } from 'express';
+import { User } from './models/User';
+import sequelize from './database/database';
 import login from './router/login';
 
 const app = express();
 const PORT: number = 8080;
+
+
+// Sync models with database
+sequelize.sync();
 
 
 
@@ -12,6 +18,9 @@ app.get('/', (req: Request, res: Response) => {
     });
 });
 
+app.use(express.json());
+
+// Login route - params: username & password
 app.use('/login', login);
 
 app.listen(PORT, () => {
