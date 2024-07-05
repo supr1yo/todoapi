@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { User } from './models/User';
+import  User  from './models/User';
 import sequelize from './database/database';
 import login from './router/login';
 
@@ -12,10 +12,9 @@ sequelize.sync();
 
 
 
-app.get('/', (req: Request, res: Response) => {
-    res.send({
-        message: 'Hello World!'
-    });
+app.get('/', async (req: Request, res: Response) => {
+    const allUser = User.findAll();
+    console.log(allUser);
 });
 
 app.use(express.json());
