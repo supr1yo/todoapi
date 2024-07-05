@@ -131,3 +131,6 @@ dist
 
 # SQLite db
 *.sqlite
+
+# Swagger docs
+generate/
