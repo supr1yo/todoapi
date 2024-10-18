@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7",
@@ -14,13 +16,13 @@
     "typescript": "^5.5.3"
   },
   "name": "todoapi",
-  "description": "API for ToDo App",
+  "description": "An open source API for your To-Do application.",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/index.ts"
   },
   "keywords": [],
-  "author": "",
+  "author": "Supriyo",
   "license": "ISC"
 }
